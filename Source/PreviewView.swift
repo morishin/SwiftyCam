@@ -51,31 +51,31 @@ class PreviewView: UIView {
         super.init(coder: aDecoder)
     }
     
-	var videoPreviewLayer: AVCaptureVideoPreviewLayer {
+    var videoPreviewLayer: AVCaptureVideoPreviewLayer {
         let previewlayer = layer as! AVCaptureVideoPreviewLayer
         switch gravity {
         case .resize:
-            previewlayer.videoGravity = AVLayerVideoGravityResize
+            previewlayer.videoGravity = AVLayerVideoGravity.resize
         case .resizeAspect:
-            previewlayer.videoGravity = AVLayerVideoGravityResizeAspect
+            previewlayer.videoGravity = AVLayerVideoGravity.resizeAspect
         case .resizeAspectFill:
-            previewlayer.videoGravity = AVLayerVideoGravityResizeAspectFill
+            previewlayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         }
-		return previewlayer
-	}
-	
-	var session: AVCaptureSession? {
-		get {
-			return videoPreviewLayer.session
-		}
-		set {
-			videoPreviewLayer.session = newValue
-		}
-	}
-	
-	// MARK: UIView
-	
-	override class var layerClass : AnyClass {
-		return AVCaptureVideoPreviewLayer.self
-	}
+        return previewlayer
+    }
+    
+    var session: AVCaptureSession? {
+        get {
+            return videoPreviewLayer.session
+        }
+        set {
+            videoPreviewLayer.session = newValue
+        }
+    }
+    
+    // MARK: UIView
+    
+    override class var layerClass : AnyClass {
+        return AVCaptureVideoPreviewLayer.self
+    }
 }

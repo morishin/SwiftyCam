@@ -12,7 +12,6 @@ Pod::Spec.new do |s|
   s.summary          = 'A Simple, Snapchat inspired camera Framework written in Swift'
   s.ios.deployment_target = '8.0'
 
-
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
 #   * Try to keep it short, snappy and to the point.
