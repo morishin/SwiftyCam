@@ -37,17 +37,17 @@ public enum SwiftyCamVideoGravity {
     case resizeAspectFill
 }
 
-class PreviewView: UIView {
+public class PreviewView: UIView {
     
     private var gravity: SwiftyCamVideoGravity = .resizeAspect
-    
+
     init(frame: CGRect, videoGravity: SwiftyCamVideoGravity) {
         gravity = videoGravity
         super.init(frame: frame)
         self.backgroundColor = UIColor.black
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -75,7 +75,7 @@ class PreviewView: UIView {
 	
 	// MARK: UIView
 	
-	override class var layerClass : AnyClass {
+	override public class var layerClass : AnyClass {
 		return AVCaptureVideoPreviewLayer.self
 	}
 }
